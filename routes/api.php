@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ShortUrlController;
+use App\Http\Controllers\StatsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/short-urls', [ShortUrlController::class, 'store'])->name('api.short-url.store');
 Route::delete('/short-urls/{shortUrl:code}', [ShortUrlController::class, 'destroy'])->name('api.short-url.delete');
+Route::get('/short-urls/{shortUrl:code}/stats/last-visit',  [StatsController::class, 'lastVisit'])->name('api.short-url.stats.last-visit');
