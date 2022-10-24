@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('/short-urls', [ShortUrlController::class, 'store'])->name('api.short-url.store');
 Route::delete('/short-urls/{shortUrl:code}', [ShortUrlController::class, 'destroy'])->name('api.short-url.delete');
 Route::get('/short-urls/{shortUrl:code}/stats/last-visit',  [StatsController::class, 'lastVisit'])->name('api.short-url.stats.last-visit');
+Route::get('/short-urls/{shortUrl:code}/stats/visit',  [StatsController::class, 'visits'])->name('api.short-url.stats.visits');
